@@ -1,22 +1,10 @@
-const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string];
-} = {
-  name: 'Sai',
-  age: 30,
-  hobbies: ['Yoga', 'Painting'],
-  role: [66, 'dude'],
-};
+type Combine = number | string;
 
-person.role.push('Welcome, stranger!');
-
-let favActivities: string[];
-favActivities = ['Dude', 'Bro'];
-
-for (const hobby of person.hobbies) {
-  console.log(hobby);
-}
-
-console.log(person);
+const combine: Combine = ((input1: Combine, input2: Combine) => {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else result = input1.toString() + input2.toString();
+  console.log(result);
+  return result;
+})(55, 24);
